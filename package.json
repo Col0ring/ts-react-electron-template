@@ -2,7 +2,7 @@
   "name": "ts-react-electron-template",
   "version": "0.1.0",
   "private": true,
-  "main": "./build/main/index.js",
+  "main": "./build/main.js",
   "dependencies": {
     "electron-is-dev": "^1.2.0"
   },
@@ -14,6 +14,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/webpack": "^4.41.17",
     "concurrently": "^5.2.0",
     "cross-env": "^7.0.2",
     "electron": "^9.0.5",
@@ -22,6 +23,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "ts-loader": "^7.0.5",
+    "ts-node": "^8.10.2",
     "typescript": "~3.7.2",
     "wait-on": "^5.0.1"
   },
@@ -29,11 +32,11 @@
     "start:render": "cross-env BROWSER=none react-scripts start",
     "watch-main": "tsc --watch -p ./tsconfig.main.json",
     "start:watch-main": "concurrently \"npm run watch-main\" \"npm run build:main && nodemon --exec electron .\"",
-    "start:main": "concurrently \"npm run watch-main\" \"npm run build:main && electron .\"",
+    "start:main": "concurrently \"ts-node --project ./config/tsconfig.json ./config/dev.ts\" \"electron .\"",
     "start": "concurrently \"npm run start:render\" \"wait-on http://localhost:3000 && npm run start:main\"",
     "start:watch": "concurrently \"npm run start:render\" \"wait-on http://localhost:3000 && npm run start:watch-main\"",
     "build:render": "react-scripts build",
-    "build:main": "tsc -p ./tsconfig.main.json",
+    "build:main": "ts-node --project ./config/tsconfig.json ./config/build.ts",
     "build": "npm run build:render && npm run build:main",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -50,7 +53,7 @@
       "build/**/*"
     ],
     "extraMetadata": {
-      "main": "./build/main/index.js"
+      "main": "./build/main.js"
     },
     "directories": {
       "buildResources": "assets"
