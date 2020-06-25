@@ -1,7 +1,13 @@
 {
   "name": "ts-react-electron-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "author": "Col0ring",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Col0ring/ts-react-electron-template.git"
+  },
   "main": "./build/main.js",
   "dependencies": {},
   "devDependencies": {

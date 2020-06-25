@@ -1,44 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">ts-react-electron-template</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/Col0ring/ts-react-electron-template#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/Col0ring/ts-react-electron-template/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/Col0ring/ts-react-electron-template/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/Col0ring/ts-react-electron-template" />
+  </a>
+</p>
 
-## Available Scripts
+> 一个基于 create-react-app 和 typescript 的 electron 模板
 
-In the project directory, you can run:
+### 🏠 [Homepage](https://github.com/Col0ring/ts-react-electron-template)
 
-### `yarn start`
+## Install
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+yarn install
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Usage
 
-### `yarn test`
+- 开发环境：
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Electron 部分：使用 webpack 对主进程进行监听打包并生成 build 目录，然后使用 nodemon 运行 electron 进行监听。electron 的入口文件默认为`./main/index.ts`,如果要修改可以在`package.json`中进行修改。
+  - React 部分：React 部分没做任何修改，同`create-react-app`开发。
 
-### `yarn build`
+  ```sh
+  npm run start
+  # or
+  yarn start
+  ```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 生产环境
+  - 可以先使用下面命令对项目依赖进行打包，再通过各自需求进行程序打包：
+    ```sh
+    npm run build
+    # or
+    yarn build
+    ```
+  - 也可以直接使用程序打包的命令进行打包，像下面直接打包成当前平台的可执行程序：
+    ```sh
+    npm run pack
+    # or
+    # yarn 也需要带上 run，不然会触发 yarn 的 pack 命令
+    yarn run pack
+    ```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Author
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👤 **Col0ring**
 
-### `yarn eject`
+- Github: [@Col0ring](https://github.com/Col0ring)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Show your support
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Give a ⭐️ if this project helped you!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📝 License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copyright © 2020 [Col0ring](https://github.com/Col0ring).<br />
+This project is [MIT](https://github.com/Col0ring/ts-react-electron-template/blob/master/LICENSE) licensed.
