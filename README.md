@@ -10,6 +10,12 @@
   <a href="https://github.com/Col0ring/ts-react-electron-template/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/Col0ring/ts-react-electron-template" />
   </a>
+   <a href="https://github.com/Col0ring/ts-react-electron-template#readme" target="_blank">
+    <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%3E%3D3.7.2-blue" />
+  </a>
+  <a href="https://github.com/Col0ring/ts-react-electron-template#readme" target="_blank">
+    <img alt="Electron" src="https://img.shields.io/badge/electron-%3E%3D9.0.5-orange" />
+  </a>
 </p>
 
 > 一个基于 create-react-app 和 typescript 的 electron 模板
@@ -19,7 +25,14 @@
 ## Install
 
 ```sh
-yarn install
+# Clone this repository
+git clone https://github.com/Col0ring/ts-react-electron-template.git
+# Go into the repository
+cd ts-react-electron-template
+# Install dependencies
+npm install
+# or
+yarn
 ```
 
 ## Usage
@@ -36,6 +49,7 @@ yarn install
   ```
 
 - 生产环境
+
   - 可以先使用下面命令对项目依赖进行打包，再通过各自需求进行程序打包：
     ```sh
     npm run build
@@ -43,12 +57,15 @@ yarn install
     yarn build
     ```
   - 也可以直接使用程序打包的命令进行打包，像下面直接打包成当前平台的可执行程序：
+
     ```sh
     npm run pack
     # or
     # yarn 也需要带上 run，不然会触发 yarn 的 pack 命令
     yarn run pack
     ```
+
+  **注意：** 由于`electron-builder`会将`dependencies`的依赖都打包进去，所以为了减小打包体积，尽量将依赖都放到`devDependencies`中。
 
 ## Author
 
