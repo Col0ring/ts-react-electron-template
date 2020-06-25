@@ -4,13 +4,16 @@ import path from 'path'
 
 class WebpackConfig implements Configuration {
   // node环境
-  target: Configuration['target'] = 'node'
+  target: Configuration['target'] = 'electron-main'
   entry: Configuration['entry'] = [
     path.resolve(__dirname, '../src/main/index.ts')
   ]
   output: Configuration['output'] = {
     filename: 'main.js',
     path: path.resolve(__dirname, '../build')
+  }
+  node: Configuration['node'] = {
+    __dirname: false
   }
   resolve: Configuration['resolve'] = {
     alias: {

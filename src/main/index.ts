@@ -1,8 +1,8 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
-let win: BrowserWindow | null = null
 
+let win: BrowserWindow | null = null
 function createWindow() {
   // 创建浏览器窗口。
   win = new BrowserWindow({
@@ -16,7 +16,7 @@ function createWindow() {
 
   const urlLocation = isDev
     ? 'http://localhost:3000'
-    : `file://${path.join(__dirname, '../index.html')}`
+    : `file://${path.join(__dirname, './index.html')}`
 
   win.loadURL(urlLocation)
 
