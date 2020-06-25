@@ -1,7 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+const { remote } = window.require('electron')
+console.log(remote)
 function App() {
   return (
     <div className="App">
@@ -20,7 +21,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
