@@ -5,9 +5,7 @@ import path from 'path'
 class WebpackConfig implements Configuration {
   // node环境
   target: Configuration['target'] = 'electron-main'
-  entry: Configuration['entry'] = [
-    path.resolve(__dirname, '../src/main/index.ts')
-  ]
+  entry: Configuration['entry'] = [path.resolve(__dirname, '../main/index.ts')]
   output: Configuration['output'] = {
     filename: 'main.js',
     path: path.resolve(__dirname, '../build')
