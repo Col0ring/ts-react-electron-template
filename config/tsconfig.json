@@ -3,7 +3,6 @@
     "target": "es5",
     "lib": ["esnext"],
     "allowJs": true,
-    "noEmit": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -12,7 +11,14 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noEmit": true,
     "isolatedModules": true
   },
-  "exclude": ["node_modules", "dist", "build", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": [
+    "./node_modules",
+    "./dist",
+    "./build",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }

@@ -1,16 +1,17 @@
 import { Configuration } from 'webpack'
-// import nodeExrernals from 'webpack-node-externals'
 import path from 'path'
 
 class WebpackConfig implements Configuration {
-  // node环境
+  // 修改 target 为 electron-main
   target: Configuration['target'] = 'electron-main'
   entry: Configuration['entry'] = [path.resolve(__dirname, '../main/index.ts')]
   output: Configuration['output'] = {
     filename: 'main.js',
     path: path.resolve(__dirname, '../build')
   }
+
   node: Configuration['node'] = {
+    // 默认值是 'mock'，会将其转化为'/'，我们这里并不是服务端，应该设置为 false ，表示输出文件的目录名，在打包代码里面也要一直将其当作打包后的文件路径使用
     __dirname: false
   }
   resolve: Configuration['resolve'] = {
@@ -27,20 +28,16 @@ class WebpackConfig implements Configuration {
       {
         test: /\.tsx?$/,
         use: [
-          { loader: 'babel-loader' },
           {
             loader: 'ts-loader',
             options: {
               // 加快编译速度
-              transpileOnly: true
+              transpileOnly: true,
+              // 更改编译配置
+              configFile: path.resolve(__dirname, './tsconfig.json')
             }
           }
-        ],
-        exclude: /node_modules/
-      },
-      {
-        test: '/.jsx$/',
-        use: [{ loader: 'babel-loader' }]
+        ]
       }
     ]
   }
