@@ -21,22 +21,13 @@ class WebpackConfig implements Configuration {
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   }
-  // webpack 的 externals配置
-  //   externals: ExternalsElement[] = [nodeExrernals()]
   module: Configuration['module'] = {
     rules: [
       {
         test: /\.tsx?$/,
         use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              // 加快编译速度
-              transpileOnly: true,
-              // 更改编译配置
-              configFile: path.resolve(__dirname, './tsconfig.json')
-            }
-          }
+          // 这里使用 babel-loader + @babel/preset-typescript 作为转义 typescript 的方案
+          'babel-loader'
         ]
       }
     ]
