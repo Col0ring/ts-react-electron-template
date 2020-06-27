@@ -16,7 +16,6 @@ function errorHandler(err: Error & { details?: string }, stats: webpack.Stats) {
       if (err.details) {
         console.error(err.details)
       }
-      return
     }
     if (stats.hasWarnings()) {
       console.warn(info.warnings)

@@ -11,7 +11,6 @@
   "main": "./build/main.js",
   "dependencies": {},
   "devDependencies": {
-    "@babel/preset-typescript": "^7.10.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -55,17 +54,11 @@
   },
   "homepage": "./",
   "build": {
-    "appId": "testId",
-    "productName": "testName",
-    "extends": null,
     "files": [
       "build/**/*"
     ],
     "extraMetadata": {
       "main": "./build/main.js"
-    },
-    "directories": {
-      "buildResources": "assets"
     }
   },
   "eslintConfig": {
