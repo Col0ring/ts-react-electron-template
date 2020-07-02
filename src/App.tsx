@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import logo from '@/logo.svg'
+import './App.less'
+import { Button } from 'antd'
 const { remote } = window.require('electron')
 console.log(remote)
 function App() {
@@ -17,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          <Button type="primary">Learn React</Button>
         </a>
       </header>
     </div>
