@@ -24,6 +24,8 @@
 
 ## Install
 
+如果项目内部使用 antd 可以直接克隆 [带有 and 的模板](https://github.com/Col0ring/ts-react-electron-template/tree/antd)。
+
 ```sh
 # Clone this repository
 git clone https://github.com/Col0ring/ts-react-electron-template.git
