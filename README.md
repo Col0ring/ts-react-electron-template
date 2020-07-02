@@ -26,7 +26,7 @@
 
 ```sh
 # Clone this repository
-git clone https://github.com/Col0ring/ts-react-electron-template.git
+git clone -b antd https://github.com/Col0ring/ts-react-electron-template.git
 # Go into the repository
 cd ts-react-electron-template
 # Install dependencies
@@ -40,7 +40,7 @@ yarn
 - 开发环境：
 
   - Electron 部分：使用 webpack 对主进程进行监听打包并生成 build 目录，然后使用 nodemon 运行 electron 进行监听。electron 的入口文件默认为`./main/index.ts`,如果要修改可以在`package.json`中进行修改。
-  - React 部分：React 部分没做任何修改，同`create-react-app`开发。
+  - React 部分：React 部分引入了 antd 组件库，并且配置了自定义主题和 less 的 module，用法同 cra 中的 css module，使用 .module.less 自动会使用 css-module，使用 .less 不会引入 css-module。同时配置了别名，具体可通过同时修改`craco.config.js`和`paths.json`得到。
 
   ```sh
   npm run start
