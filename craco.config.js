@@ -7,7 +7,7 @@ module.exports = {
       '@': path.resolve(__dirname, './src'),
       '@@': path.resolve(__dirname, './')
     },
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'less', 'css']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.less', '.css']
   },
   // 设置匹配规则，使用 .module.less 自动会使用 css-module，使用 .less 不会引入 css-module
   plugins: [
