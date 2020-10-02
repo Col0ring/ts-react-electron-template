@@ -1,8 +1,9 @@
 {
-  "name": "ts-react-electron-template",
-  "version": "0.1.1",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "version": "1.0.0",
   "private": true,
-  "author": "Col0ring",
+  "author": "{{ author }}",
   "license": "MIT",
   "repository": {
     "type": "git",
